@@ -8,11 +8,6 @@ pipeline{
                 git url: 'https://github.com/DarlingOlvera/Tareas.git',branch: 'dev'
             }
         }
-        stage('enter app folder'){
-            steps{
-                sh 'cd SiceiExpress'
-            }
-        }
         stage('Install dependencies'){
             steps{
                 sh 'npm install'
