@@ -1,0 +1,35 @@
+
+pipeline{
+    agent any
+    stages{
+        stage('Checkout'){
+            steps{
+                //Jalar el proyecto de git
+                git url: 'https://github.com/DarlingOlvera/Tareas.git',branch: 'dev'
+            }
+        }
+        stage('enter app folder'){
+            steps{
+                sh 'cd SiceiExpress'
+            }
+        }
+        stage('Install dependencies'){
+            steps{
+                sh 'npm install'
+            }
+        }
+
+        stage('Test'){
+            steps{
+                //Run tests
+                sh 'npm run test'
+            }
+        }
+
+        stage('Start the app'){
+            steps{
+                sh 'npm start'
+            }
+        }
+    }
+}

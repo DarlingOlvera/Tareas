@@ -8,7 +8,7 @@ COPY package*.json ./
 RUN npm install
 
 #copiar los archivos restantes del programa a la carpeta
-COPY sicei.js ./
+COPY ./src/sicei.js ./
 
 #ejecutar la app
 CMD ["npm","start"]
