@@ -12,10 +12,9 @@ pipeline{
         }
         stage('Install dependencies and do tests'){
             steps{
-                dir(/SiceiExpress){
+                    sh 'cd SiceiExpress'
                     sh 'npm install'
-                    sh 'npm run test'
-                }
+                    sh 'npm run test'  
             }
         }
 
